@@ -1,0 +1,236 @@
+* { box-sizing: border-box; }
+:root {
+  color-scheme: light dark;
+  --scc-bg: #ffffff;
+  --scc-panel: #fafafa;
+  --scc-fg: #1a1a1a;
+  --scc-muted: #6b7280;
+  --scc-border: #e5e7eb;
+  --scc-hover: #f0f1f3;
+  --scc-accent: #2d6cdf;
+  --scc-danger: #d93025;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --scc-bg: #17181a;
+    --scc-panel: #1e1f22;
+    --scc-fg: #f1f1f1;
+    --scc-muted: #9aa0a6;
+    --scc-border: #34363a;
+    --scc-hover: #26282c;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--scc-bg);
+  color: var(--scc-fg);
+  font: 14px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.scc-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.scc-sidebar {
+  width: 260px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--scc-border);
+  background: var(--scc-panel);
+  padding: 14px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  overflow-y: auto;
+}
+.scc-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.scc-sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.scc-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.scc-sidebar-item:hover {
+  background: var(--scc-hover);
+}
+.scc-sidebar-item.scc-active {
+  background: var(--scc-hover);
+  font-weight: 600;
+}
+.scc-sidebar-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+.scc-sidebar-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.scc-sidebar-empty {
+  color: var(--scc-muted);
+  font-size: 12.5px;
+  padding: 8px 10px;
+}
+
+.scc-main {
+  flex: 1;
+  padding: 28px 36px 80px;
+  max-width: 760px;
+}
+
+.scc-main-empty {
+  max-width: 480px;
+  padding-top: 60px;
+}
+.scc-main-empty h1 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+.scc-main-empty p {
+  color: var(--scc-muted);
+  margin: 0 0 18px;
+}
+
+.scc-form-section {
+  margin-bottom: 26px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--scc-border);
+}
+.scc-form-section h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--scc-muted);
+  margin: 0 0 12px;
+}
+.scc-hint {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--scc-muted);
+}
+
+input[type="text"], input[type="url"], input[type="color"], textarea {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--scc-border);
+  border-radius: 7px;
+  background: var(--scc-bg);
+  color: var(--scc-fg);
+  font-weight: 400;
+}
+input[type="color"] {
+  padding: 2px 4px;
+  height: 34px;
+  width: 70px;
+}
+textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.scc-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.scc-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 14px;
+}
+
+.scc-checkbox-label {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--scc-fg);
+}
+
+.scc-checklist-editor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.scc-checklist-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+}
+.scc-checklist-required {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.scc-btn {
+  border: 1px solid var(--scc-border);
+  background: var(--scc-bg);
+  color: var(--scc-fg);
+  border-radius: 7px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.scc-btn:hover {
+  background: var(--scc-hover);
+}
+.scc-btn-sm {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+.scc-btn-primary {
+  background: var(--scc-accent);
+  border-color: var(--scc-accent);
+  color: #fff;
+}
+.scc-btn-danger {
+  border-color: var(--scc-danger);
+  color: var(--scc-danger);
+  background: transparent;
+}
+.scc-btn-ghost {
+  border: none;
+  opacity: 0.7;
+}
+
+.scc-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.scc-save-status {
+  font-size: 12.5px;
+  color: #188038;
+}
+.scc-save-status.scc-error {
+  color: var(--scc-danger);
+}

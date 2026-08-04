@@ -1,0 +1,7 @@
+node_modules/
+.DS_Store
+Thumbs.db
+
+# working files used only to produce the screenshots in public/images —
+# not needed at runtime
+/screenshots/

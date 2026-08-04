@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Options mockup</title>
+<link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="scc-layout">
+    <aside class="scc-sidebar">
+      <div class="scc-sidebar-header">
+        <span>Client Workspaces</span>
+        <button class="scc-btn scc-btn-primary scc-btn-sm">+ New</button>
+      </div>
+      <ul class="scc-sidebar-list">
+        <li class="scc-sidebar-item scc-active"><span class="scc-sidebar-dot" style="background:#2d6cdf"></span><span class="scc-sidebar-name">Fitness Brand Co</span></li>
+        <li class="scc-sidebar-item"><span class="scc-sidebar-dot" style="background:#c07a2e"></span><span class="scc-sidebar-name">Urban Coffee Co</span></li>
+        <li class="scc-sidebar-item"><span class="scc-sidebar-dot" style="background:#d01884"></span><span class="scc-sidebar-name">GlowSkin Studio</span></li>
+        <li class="scc-sidebar-item"><span class="scc-sidebar-dot" style="background:#12b5cb"></span><span class="scc-sidebar-name">Nomad Travel Co</span></li>
+      </ul>
+    </aside>
+
+    <main class="scc-main">
+      <form class="scc-form">
+        <section class="scc-form-section">
+          <h2>Identity</h2>
+          <div class="scc-grid-2">
+            <label>Client name <input type="text" value="Fitness Brand Co" /></label>
+            <label>Icon label <input type="text" value="FB" /></label>
+            <label>Brand color <input type="color" value="#2d6cdf" /></label>
+            <label>Time zone <input type="text" value="America/Los_Angeles" /></label>
+            <label>Language <input type="text" value="US English" /></label>
+          </div>
+        </section>
+
+        <section class="scc-form-section">
+          <h2>Platform URLs</h2>
+          <div class="scc-grid-2">
+            <label>TikTok profile <input type="url" value="https://www.tiktok.com/@fitnessbrand" /></label>
+            <label>TikTok analytics <input type="url" value="https://www.tiktok.com/tiktokstudio/analytics" /></label>
+            <label>Instagram profile <input type="url" value="https://www.instagram.com/fitnessbrand/" /></label>
+            <label>Meta Business Suite <input type="url" value="https://business.facebook.com/latest/home" /></label>
+            <label>Facebook Page <input type="url" value="https://www.facebook.com/fitnessbrandpage" /></label>
+            <label>YouTube Studio <input type="url" value="https://studio.youtube.com/channel/UCxxxx" /></label>
+          </div>
+        </section>
+
+        <section class="scc-form-section">
+          <h2>Notes</h2>
+          <label>Brand voice & content pillars
+            <textarea rows="2">Upbeat, no slang, always metric + imperial units.</textarea>
+          </label>
+          <label>Compliance rules
+            <textarea rows="2">Must include #ad on all paid content.</textarea>
+          </label>
+        </section>
+
+        <section class="scc-form-section">
+          <h2>Snippets <span class="scc-hint">one per line</span></h2>
+          <div class="scc-grid-3">
+            <label>Hashtag sets <textarea rows="4">#fitnessbrand
+#dailyworkout
+#homegym</textarea></label>
+            <label>CTA phrases <textarea rows="4">Save this for later!
+Tag a friend who needs this</textarea></label>
+            <label>Compliance snippets <textarea rows="4">#ad
+Results may vary.</textarea></label>
+          </div>
+        </section>
+
+        <section class="scc-form-section">
+          <h2>Posting checklist</h2>
+          <div class="scc-checklist-editor">
+            <div class="scc-checklist-row">
+              <input type="text" value="Check tone matches brand voice" />
+              <label class="scc-checkbox-label scc-checklist-required"><input type="checkbox" checked /> Required</label>
+              <button type="button" class="scc-btn scc-btn-sm scc-btn-ghost">Remove</button>
+            </div>
+            <div class="scc-checklist-row">
+              <input type="text" value="Hashtags approved" />
+              <label class="scc-checkbox-label scc-checklist-required"><input type="checkbox" checked /> Required</label>
+              <button type="button" class="scc-btn scc-btn-sm scc-btn-ghost">Remove</button>
+            </div>
+            <div class="scc-checklist-row">
+              <input type="text" value="Add #ad if sponsored" />
+              <label class="scc-checkbox-label scc-checklist-required"><input type="checkbox" /> Required</label>
+              <button type="button" class="scc-btn scc-btn-sm scc-btn-ghost">Remove</button>
+            </div>
+          </div>
+          <button type="button" class="scc-btn scc-btn-sm">+ Add checklist item</button>
+        </section>
+
+        <section class="scc-form-section">
+          <h2>Behavior</h2>
+          <div class="scc-grid-2">
+            <label class="scc-checkbox-label"><input type="checkbox" checked /> Show identity color bar</label>
+            <label class="scc-checkbox-label"><input type="checkbox" checked /> Show posting safety check</label>
+          </div>
+        </section>
+
+        <div class="scc-form-actions">
+          <button type="submit" class="scc-btn scc-btn-primary">Save workspace</button>
+          <button type="button" class="scc-btn scc-btn-danger">Delete workspace</button>
+          <span class="scc-save-status">Saved.</span>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

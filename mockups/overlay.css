@@ -1,0 +1,240 @@
+/* All SCC elements use extreme specificity + a reset to survive host-page
+   CSS. Nothing here should ever cover critical page chrome. */
+
+html {
+  scroll-padding-top: var(--scc-bar-height, 0px);
+}
+body {
+  margin-top: var(--scc-bar-height, 0px) !important;
+}
+
+#scc-identity-bar {
+  all: revert;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 28px;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 500 12.5px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 0 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+#scc-identity-bar .scc-bar-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#scc-identity-bar .scc-bar-close {
+  all: revert;
+  position: absolute;
+  right: 8px;
+  top: 0;
+  height: 28px;
+  width: 22px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  opacity: 0.75;
+}
+#scc-identity-bar .scc-bar-close:hover {
+  opacity: 1;
+}
+
+/* Shared card base (context prompt + safety check) */
+#scc-context-card,
+#scc-safety-card {
+  all: revert;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2147483647;
+  width: 280px;
+  background: #ffffff;
+  color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+  padding: 14px 14px 12px;
+  font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  border-top: 4px solid var(--scc-accent, #2d6cdf);
+}
+@media (prefers-color-scheme: dark) {
+  #scc-context-card,
+  #scc-safety-card {
+    background: #202124;
+    color: #f1f1f1;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.scc-card-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.scc-card-body {
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+.scc-workspace-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px 0;
+  max-height: 160px;
+  overflow-y: auto;
+}
+.scc-workspace-item {
+  all: unset;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.scc-workspace-item:hover {
+  background: rgba(127, 127, 127, 0.15);
+}
+.scc-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--scc-dot, #999);
+  flex-shrink: 0;
+}
+.scc-card-dismiss {
+  all: unset;
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.65;
+  cursor: pointer;
+}
+.scc-card-dismiss:hover {
+  opacity: 1;
+}
+
+.scc-card-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+.scc-btn {
+  all: unset;
+  flex: 1;
+  text-align: center;
+  padding: 7px 8px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(127, 127, 127, 0.15);
+}
+.scc-btn:hover {
+  background: rgba(127, 127, 127, 0.25);
+}
+.scc-btn-primary {
+  background: var(--scc-accent, #2d6cdf);
+  color: #fff;
+}
+.scc-btn-ghost {
+  opacity: 0.7;
+}
+
+/* Snippets toggle + panel */
+#scc-snippets-toggle {
+  all: revert;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2147483646;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font: 600 12.5px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  cursor: pointer;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+#scc-snippets-panel {
+  all: revert;
+  position: fixed;
+  bottom: 64px;
+  left: 20px;
+  z-index: 2147483646;
+  width: 300px;
+  max-height: 60vh;
+  overflow-y: auto;
+  background: #ffffff;
+  color: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.22);
+  border-top: 4px solid var(--scc-accent, #2d6cdf);
+  font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  #scc-snippets-panel {
+    background: #202124;
+    color: #f1f1f1;
+  }
+}
+.scc-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.25);
+}
+.scc-panel-close {
+  all: unset;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0.7;
+}
+.scc-panel-section {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(127, 127, 127, 0.15);
+}
+.scc-panel-heading {
+  font-weight: 600;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  opacity: 0.65;
+  margin-bottom: 6px;
+}
+.scc-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.scc-chip {
+  all: unset;
+  cursor: pointer;
+  background: rgba(127, 127, 127, 0.15);
+  padding: 4px 9px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.scc-chip:hover {
+  background: rgba(127, 127, 127, 0.28);
+}
+.scc-chip-copied {
+  background: #188038 !important;
+  color: #fff;
+}
+.scc-checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  cursor: pointer;
+}

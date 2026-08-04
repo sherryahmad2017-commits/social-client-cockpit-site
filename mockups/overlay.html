@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Overlay mockup</title>
+<link rel="stylesheet" href="overlay.css" />
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #eef0f3;
+  }
+  .browser-frame {
+    width: 1200px;
+    margin: 40px auto;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+    background: #fff;
+  }
+  .browser-chrome {
+    background: #e7e8eb;
+    padding: 12px 16px 10px;
+  }
+  .traffic-lights { display: flex; gap: 7px; margin-bottom: 10px; }
+  .traffic-lights span { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+  .traffic-lights .r { background: #ff5f57; }
+  .traffic-lights .y { background: #febc2e; }
+  .traffic-lights .g { background: #28c840; }
+  .address-bar {
+    background: #fff;
+    border-radius: 7px;
+    padding: 7px 12px;
+    font-size: 12.5px;
+    color: #444;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: inset 0 0 0 1px #d7d8db;
+  }
+  .address-bar .lock { opacity: 0.5; }
+
+  .fake-page {
+    position: relative;
+    height: 680px;
+    background: #fafafa;
+    overflow: hidden;
+  }
+
+  .composer-card {
+    position: absolute;
+    top: 88px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 520px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.08);
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+  }
+  .composer-title { font-weight: 700; font-size: 15px; margin-bottom: 14px; color: #222; }
+  .composer-upload {
+    height: 220px;
+    border-radius: 10px;
+    background: repeating-linear-gradient(45deg, #f1f2f4, #f1f2f4 10px, #e9eaed 10px, #e9eaed 20px);
+    display: flex; align-items: center; justify-content: center;
+    color: #9aa0a6; font-size: 12.5px; margin-bottom: 16px;
+  }
+  .composer-line { height: 10px; border-radius: 5px; background: #eceef1; margin-bottom: 10px; }
+  .composer-line.w80 { width: 80%; }
+  .composer-line.w60 { width: 60%; }
+  .composer-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+  .composer-btn { padding: 8px 18px; border-radius: 7px; font-size: 12.5px; font-weight: 600; }
+  .composer-btn.ghost { background: transparent; color: #666; }
+  .composer-btn.primary { background: #2d6cdf; color: #fff; }
+</style>
+</head>
+<body>
+  <div class="browser-frame">
+    <div class="browser-chrome">
+      <div class="traffic-lights"><span class="r"></span><span class="y"></span><span class="g"></span></div>
+      <div class="address-bar"><span class="lock">&#128274;</span> instagram.com/create/select</div>
+    </div>
+
+    <div class="fake-page">
+      <div id="scc-identity-bar" style="position:absolute; top:0; left:0; right:0; background:#2d6cdf; color:#fff;">
+        <span class="scc-bar-label">FB Fitness Brand Co | 7:32 PM PST | US English</span>
+        <button class="scc-bar-close">&times;</button>
+      </div>
+
+      <div class="composer-card">
+        <div class="composer-title">Create new post</div>
+        <div class="composer-upload">Drag photos and videos here</div>
+        <div class="composer-line w80"></div>
+        <div class="composer-line w60"></div>
+        <div class="composer-actions">
+          <span class="composer-btn ghost">Discard</span>
+          <span class="composer-btn primary">Share</span>
+        </div>
+      </div>
+
+      <div id="scc-safety-card" style="position:absolute; top:auto; bottom:20px; right:20px; --scc-accent:#2d6cdf;">
+        <div class="scc-card-title">Posting as <strong>@fitnessbrand</strong></div>
+        <div class="scc-card-body">Workspace: <strong style="color:#2d6cdf">Fitness Brand Co</strong>. Confirm this is the right client before you publish.</div>
+        <div class="scc-card-actions">
+          <button class="scc-btn scc-btn-primary">Confirm &amp; continue</button>
+          <button class="scc-btn">Switch client</button>
+          <button class="scc-btn scc-btn-ghost">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
